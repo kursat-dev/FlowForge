@@ -1,0 +1,23 @@
+{
+    "name": "worker",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsx watch src/worker.ts",
+        "start": "node dist/worker.js"
+    },
+    "dependencies": {
+        "@flowforge/core": "workspace:*",
+        "@flowforge/db": "workspace:*",
+        "bullmq": "^5.8.0",
+        "ioredis": "^5.4.0",
+        "axios": "^1.7.0"
+    },
+    "devDependencies": {
+        "@flowforge/tsconfig": "workspace:*",
+        "typescript": "^5.5.0",
+        "@types/node": "^20.12.0",
+        "tsx": "^4.7.0"
+    }
+}

@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Workflow {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  nodes       Json     // Array of nodes
+  edges       Json     // Array of edges
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  executions Execution[]
+
+  @@map("workflows")
+}
+
+model Execution {
+  id          String   @id @default(cuid())
+  workflowId  String
+  workflow    Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  
+  status      String   // pending, running, completed, failed
+  triggerData Json?    // Data that triggered the workflow
+  startedAt   DateTime @default(now())
+  completedAt DateTime?
+  error       String?
+
+  steps       ExecutionStep[]
+
+  @@map("executions")
+}
+
+model ExecutionStep {
+  id          String    @id @default(cuid())
+  executionId String
+  execution   Execution @relation(fields: [executionId], references: [id], onDelete: Cascade)
+  
+  nodeId      String    // Reference to node in workflow
+  nodeName    String
+  status      String    // pending, running, completed, failed
+  input       Json?
+  output      Json?
+  error       String?
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@map("execution_steps")
+}

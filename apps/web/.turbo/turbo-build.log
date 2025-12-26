@@ -1,0 +1,14 @@
+
+
+> web@0.0.0 build /Users/kursat/Documents/Projeler/FlowForge/apps/web
+> tsc && vite build
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+[2K[1Gtransforming (1) [2mindex.h[2K[1Gtransforming (3) [2msrc/mai
+[1m[33mwarn[39m[22m - No utility classes were detected in your source files. If this is unexpected, double-check the `content` option in your Tailwind CSS configuration.
+[1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration
+[2K[1Gtransforming (25) [2m../../[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[2K[1G[32m✓[39m 198 modules transformed.
+[2K[1Grendering chunks (1)...[2K[1G[2K[1Gcomputing gzip size (0)...[2K[1Gcomputing gzip size (1)...[2K[1Gcomputing gzip size (2)...[2K[1Gcomputing gzip size (3)...[2K[1G[2mdist/[22m[32mindex.html                 [39m[1m[2m  0.39 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
+[2mdist/[22m[2massets/[22m[35mindex-BaAEtl7Q.css  [39m[1m[2m 11.81 kB[22m[1m[22m[2m │ gzip:  2.82 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-GyumlMm2.js   [39m[1m[2m287.44 kB[22m[1m[22m[2m │ gzip: 92.85 kB[22m
+[32m✓ built in 563ms[39m
